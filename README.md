@@ -16,4 +16,5 @@ Primary developer: _(TODO: fill me in)_
 
 ~~~console
 (TODO: fill me in with the text reported from `git log`!)
+Fixing delete rows function by adding print statements 
 ~~~
