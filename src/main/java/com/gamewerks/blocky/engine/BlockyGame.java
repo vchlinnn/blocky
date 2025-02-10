@@ -54,9 +54,11 @@ public class BlockyGame {
             lockCounter = 0;
             activePiece.moveTo(nextPos);
         } else {
+            System.out.println("collide detected");
             if (lockCounter < LOCK_DELAY_LIMIT) {
                 lockCounter += 1;
             } else {
+                System.out.println("something");
                 board.addToWell(activePiece);
                 lockCounter = 0;
                 activePiece = null;
@@ -70,6 +72,7 @@ public class BlockyGame {
     
     public void step() {
         trySpawnBlock();
+        processMovement();
         processGravity();
         processClearedLines();
     }

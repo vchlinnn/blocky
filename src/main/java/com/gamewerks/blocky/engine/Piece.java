@@ -25,7 +25,7 @@ public class Piece {
     
     public Piece(PieceKind kind, Position pos) {
         this.kind = kind;
-        orientation = 1;
+        orientation = 0;
         this.pos = pos;
     }
     
