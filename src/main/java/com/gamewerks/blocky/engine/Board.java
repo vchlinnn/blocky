@@ -53,7 +53,7 @@ public class Board {
     }
     
     public void deleteRow(int n) {
-        System.out.println("delete a row");
+        // System.out.println("delete a row");
         for (int row = 0; row < n - 1; row++) {
             for (int col = 0; col < Constants.BOARD_WIDTH; col++) {
                 well[row][col] = well[row+1][col];
@@ -65,7 +65,7 @@ public class Board {
     }
     
     public void deleteRows(List rows) {
-        System.out.println("delete rows");
+        // System.out.println("delete rows");
         for (int i = 0; i < rows.size(); i++) {
             int row = (Integer) rows.get(i);
             deleteRow(row);
@@ -73,7 +73,7 @@ public class Board {
     }
     
     public boolean isCompletedRow(int row) {
-        System.out.println("isCompletedRow");
+        // System.out.println("isCompletedRow");
         boolean isCompleted = true;
         for (int col = 0; col < Constants.BOARD_WIDTH; col++) {
             isCompleted = isCompleted && well[row][col];
@@ -82,7 +82,7 @@ public class Board {
     }
     
     public List getCompletedRows() {
-        System.out.println("get completed rows");
+        // System.out.println("get completed rows");
         List completedRows = new LinkedList();
         for (int row = 0; row < Constants.BOARD_HEIGHT; row++) {
             if (isCompletedRow(row)) {

@@ -54,11 +54,11 @@ public class BlockyGame {
             lockCounter = 0;
             activePiece.moveTo(nextPos);
         } else {
-            System.out.println("collide detected");
+            // System.out.println("collide detected");
             if (lockCounter < LOCK_DELAY_LIMIT) {
                 lockCounter += 1;
             } else {
-                System.out.println("something");
+                // System.out.println("something");
                 board.addToWell(activePiece);
                 lockCounter = 0;
                 activePiece = null;
@@ -67,7 +67,6 @@ public class BlockyGame {
     }
     
     private void processClearedLines() {
-        System.out.println("process cleared lines");
         board.deleteRows(board.getCompletedRows());
     }
     
