@@ -22,11 +22,45 @@ public class Piece {
     private PieceKind kind;
     private int orientation;
     private Position pos;
+    private static PieceKind[] pieceArray = new PieceKind[PieceKind.ALL.length]; 
+    private static int currentIndex = 0; 
+    
+    /**
+     * Copy elements from ALL into pieceArray
+     */
+    static {
+        for (int i = 0; i < PieceKind.ALL.length; i++) {
+            pieceArray[i] = PieceKind.ALL[i];
+        }
+        PieceKind.shuffleArray(pieceArray); 
+    }
     
     public Piece(PieceKind kind, Position pos) {
-        this.kind = kind;
+        this.kind = getNextPieceKind();
         orientation = 0;
         this.pos = pos;
+    }
+    
+    /**
+     * 
+     * @return kind
+     */
+    public PieceKind getKind() {
+        return kind;
+    }
+
+    /**
+     * If all pieces are used, reshuffle and reset index
+     * 
+     * @return the current piece and move to the next one
+     */
+    private static PieceKind getNextPieceKind() {
+        if (currentIndex >= pieceArray.length) {
+            PieceKind.shuffleArray(pieceArray);
+            currentIndex = 0;
+        }
+
+        return pieceArray[currentIndex++];
     }
     
     public Position getPosition() {
