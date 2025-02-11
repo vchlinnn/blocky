@@ -89,7 +89,6 @@ public class Board {
                 completedRows.add(row);
             }
         }
-        System.out.println(completedRows);
         return completedRows;
     }
     
