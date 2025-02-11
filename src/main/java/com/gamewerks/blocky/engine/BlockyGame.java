@@ -67,6 +67,7 @@ public class BlockyGame {
     }
     
     private void processClearedLines() {
+        System.out.println("process cleared lines");
         board.deleteRows(board.getCompletedRows());
     }
     
