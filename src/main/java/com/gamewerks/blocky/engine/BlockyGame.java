@@ -53,12 +53,14 @@ public class BlockyGame {
         if (!board.collides(activePiece.getLayout(), nextPos)) {
             lockCounter = 0;
             activePiece.moveTo(nextPos);
+            System.out.println("Piece moved to: " + activePiece.getPosition());
         } else {
-            // System.out.println("collide detected");
+            System.out.println("Collision detected at: " + activePiece.getPosition() + ", lockCounter = " + lockCounter);
             if (lockCounter < LOCK_DELAY_LIMIT) {
                 lockCounter += 1;
+                System.out.println("Lock delay: " + lockCounter);
             } else {
-                // System.out.println("something");
+                System.out.println("Lock delay reached. Adding to well...");
                 board.addToWell(activePiece);
                 lockCounter = 0;
                 activePiece = null;
@@ -71,10 +73,10 @@ public class BlockyGame {
     }
     
     public void step() {
+        processClearedLines();
         trySpawnBlock();
         processMovement();
         processGravity();
-        processClearedLines();
     }
     
     public boolean[][] getWell() {

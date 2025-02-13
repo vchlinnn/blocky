@@ -27,6 +27,16 @@ public class BlockyPanel extends JPanel {
     
     public void paintComponent(Graphics g) {
         boolean[][] well = game.getWell();
+        
+        // Print the well for debugging
+        System.out.println("Current Well State:");
+        for (int row = 0; row < Constants.BOARD_HEIGHT; row++) {
+            for (int col = 0; col < Constants.BOARD_WIDTH; col++) {
+                System.out.print(well[row][col] ? "x " : ". ");
+            }
+            System.out.println();
+        }
+    
         g.setColor(Color.GRAY);
         g.fillRect(0, 0, width, height);
         
