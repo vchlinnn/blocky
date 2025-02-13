@@ -42,7 +42,7 @@ public class Board {
         boolean[][] layout = p.getLayout();
         Position pos = p.getPosition();
         
-        System.out.println("Adding piece to well at position: " + pos.row + ", " + pos.col);
+        // System.out.println("Adding piece to well at position: " + pos.row + ", " + pos.col);
         
         for (int row = 0; row < layout.length; row++) {
             int wellRow = pos.row - row;
@@ -70,17 +70,17 @@ public class Board {
     } 
     
     public void deleteRows(List rows) {
-        System.out.println("delete rows");
+        // System.out.println("delete rows");
         for (int i = 0; i < rows.size(); i++) {
-            System.out.println("delete a row");
+            // System.out.println("delete a row");
             int row = (int)rows.get(i);
             deleteRow(row);
         }
     }
     
     public boolean isCompletedRow(int row) {
-        System.out.print("Checking row " + row + ": ");
-        System.out.println("isCompletedRow");
+        // System.out.print("Checking row " + row + ": ");
+        // System.out.println("isCompletedRow");
         boolean isCompleted = true;
         for (int col = 0; col < Constants.BOARD_WIDTH; col++) {
             isCompleted = isCompleted && well[row][col];
@@ -89,15 +89,15 @@ public class Board {
     }
     
     public List getCompletedRows() {
-        System.out.println("get completed rows");
+        // System.out.println("get completed rows");
         List completedRows = new LinkedList();
         for (int row = 0; row < Constants.BOARD_HEIGHT; row++) {
             if (isCompletedRow(row)) {
-                System.out.println("Completed row detected: " + row);
+                // System.out.println("Completed row detected: " + row);
                 completedRows.add(row);
             }
         }
-        System.out.println("Completed rows found: " + completedRows.size());
+        // System.out.println("Completed rows found: " + completedRows.size());
         return completedRows;
     }
     

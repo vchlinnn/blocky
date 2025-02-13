@@ -53,14 +53,14 @@ public class BlockyGame {
         if (!board.collides(activePiece.getLayout(), nextPos)) {
             lockCounter = 0;
             activePiece.moveTo(nextPos);
-            System.out.println("Piece moved to: " + activePiece.getPosition());
+            // System.out.println("Piece moved to: " + activePiece.getPosition());
         } else {
-            System.out.println("Collision detected at: " + activePiece.getPosition() + ", lockCounter = " + lockCounter);
+            // System.out.println("Collision detected at: " + activePiece.getPosition() + ", lockCounter = " + lockCounter);
             if (lockCounter < LOCK_DELAY_LIMIT) {
                 lockCounter += 1;
-                System.out.println("Lock delay: " + lockCounter);
+                // System.out.println("Lock delay: " + lockCounter);
             } else {
-                System.out.println("Lock delay reached. Adding to well...");
+                // System.out.println("Lock delay reached. Adding to well");
                 board.addToWell(activePiece);
                 lockCounter = 0;
                 activePiece = null;
