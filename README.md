@@ -19,5 +19,6 @@ Primary developer (debugger): Linh Vu
 + Add missing break statement in switch cases in BlockyGame.java
 + Add processMovement() method to step() method in BlockyGame.java to enable pieces move left/right
 + Have getCompletedRows() store row indices instead of booleans in Board.java for correct delete rows
++ Fix mismatched coordinate between the board and the panel --> blocks able to fall down
 + Implemented random block generation with modifications in Piece.java and PieceKind.java
 ~~~
