@@ -11,6 +11,7 @@ Primary developer (debugger): Linh Vu
 + Article on Java enums: https://www.w3schools.com/java/java_enums.asp
 + Wikipedia on the shuffle method: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 + Tetris online for inspiration: https://tetris.com/play-tetris
++ Professor Osera for helping debugging gravity issue 
 
 ## Changelog
 
